@@ -1,0 +1,18 @@
+<!ELEMENT frl (headers?,requests)>
+
+<!ELEMENT headers (header+)>
+
+<!ELEMENT header (#PCDATA)>
+<!ATTLIST header
+      name (author|copyright-year|description) #REQUIRED
+>
+
+<!ELEMENT requests (request+)>
+
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request
+      name CDATA #REQUIRED
+      short-description CDATA #IMPLIED
+>
+
+      

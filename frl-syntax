@@ -1,0 +1,42 @@
+The FRL (Feature Request Language) syntax is fairly simple.  It's a markup
+language based on XML, and includes the following tags:
+
+Root tag: <frl>
+
+<headers> signifies the beginning of the meta-information in the file
+<header> is a header (duh) and accepts the following attributes:
+  name: the name of the header (required)
+The content of this tag is used as the content of the header.
+
+Recognised headers are:
+ author: the name of the author of the file
+ copyright-year: the year in which the file was created (can be a range of
+years)
+ description: a description of the file
+
+<requests> signifies the beginning of the requests proper
+<request> is a request and accepts the following attributes:
+  name: the name of the request (required)
+  short-description: a brief outline of the request (optional)
+The content of this tag is used as the long description of the request
+
+Here is a brief example file to show you what's what:
+=== FILE BEGINS ===
+<?xml version="1.0" encoding="utf-8?>
+<!DOCTYPE frl SYSTEM "frl.dtd">
+<frl>
+  <headers>
+    <header name="author">Chris Browne</header>
+    <header name="copyright-year">2012</header>
+    <header name="description">An example feature request file</header>
+  </headers>
+  <requests>
+    <request name="Foo" short-description="I would like to see more foo in this
+software">Really, the software doesn't have enough foo and should have more foo
+because there's nothing quite like foo to keep software from becoming terrible
+abandonware.  Not enough foo!</request>
+    <request name="Bar">This exemplifies a request without a short description.
+ These requests are quite legitimate, don't you worry!</request>
+  </requests>
+</frl>
+=== FILE ENDS ===
